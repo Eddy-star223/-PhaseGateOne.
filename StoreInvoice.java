@@ -2,6 +2,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
+
 public class StoreInvoice {
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
@@ -30,8 +31,9 @@ while (true) {
 	double unit = input.nextDouble();
         input.nextLine(); 
 
-            // Calculate total price for the item
+            
 	double itemTotal = pieces * unit;
+	//Items.add(new Item(itemName, pieces, unit, itemTotal));
 	total += itemTotal;
 
             
@@ -54,10 +56,10 @@ while (true) {
         System.out.print("How much discount will the customer get? ");
         double discount = input.nextDouble();
 
-        
+        double vatRate = 17.50;
         double discountAmount = (discount / 100) * total;
-        double vat = (total - discount) * 0.075;
-        double totalBill = total - discount;
+        double vat = (total - discount) * vatRate / 100;
+        double totalBill = total - discount + vat;
 
 System.out.println();        
 System.out.println("SEMICOLON STORES");
@@ -66,24 +68,47 @@ System.out.println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.");
 System.out.println("Date: " + date );
 System.out.println("Cashier's Name: " + cashierName);
 System.out.println("Customer Name: " + name);
+System.out.println();
 System.out.println("""
 ================================================
 ITEM	QTY	PRICE	TOTAL(NGN)
 ------------------------------------------------
 """);
-//System.out.println(itemName + pieces + unit + itemTotal);
+
+//System.out.println(itemName + pieces + unit + total);
 
 
 
 System.out.println("Sub Total: " +	total);
 System.out.println("Discount: " +	discountAmount);
-System.out.printf("VAT @ 17.50%: " +	vat);
+System.out.printf("VAT: " +	vat);
 System.out.println();
+System.out.println();
+System.out.println("===============================================");
 System.out.println("Total Bill: " +	totalBill);
+System.out.println("===============================================");
 System.out.println();
 System.out.println("How much did the customer give to you?");
 
 }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

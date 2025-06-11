@@ -5,6 +5,8 @@ public class PersonalityTest {
     public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
 
+System.out.println("What is your name");
+String name = input.nextLine();
         
 String[][] questions = {
             {"A. tough minded, just", "B. tender-hearted, merciful", "B"},
@@ -33,7 +35,8 @@ String[][] questions = {
 int countA = 0;
 int countB = 0;
 
-        // Iterate through each question
+System.out.println();
+       
 for (int counter = 0; counter < questions.length; counter++) {
 	System.out.println(questions[counter][0]);
 	System.out.println(questions[counter][1]);
@@ -54,6 +57,7 @@ for (int counter = 0; counter < questions.length; counter++) {
             }
         }
 System.out.println();
+System.out.println("Hello " + name + " You selected");
 System.out.println("Number of A selected: " + countA);
 System.out.println("Number of B selected: " + countB);
 	
